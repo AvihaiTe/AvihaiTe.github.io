@@ -1,0 +1,163 @@
+/* ===========================================================================
+   Avihai Teram — brand.css
+   The identity as one file. Copy this and the fonts/ folder into a site, link
+   it, and write content using the tokens. Never paste a hex code into a page.
+
+   Spec: HQ/records/knowledge/brand-identity.md
+   Every colour here was solved against a contrast target and measured.
+   =========================================================================== */
+
+/* --- type ---------------------------------------------------------------- */
+@font-face{font-family:'Frank Ruhl Libre';font-style:normal;font-weight:300 900;font-display:swap;
+  src:url(fonts/frank-ruhl-libre-hebrew.woff2) format('woff2');
+  unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Frank Ruhl Libre';font-style:normal;font-weight:300 900;font-display:swap;
+  src:url(fonts/frank-ruhl-libre-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,
+  U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Heebo';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url(fonts/heebo-hebrew.woff2) format('woff2');
+  unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Heebo';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url(fonts/heebo-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,
+  U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* --- tokens: LIGHT register (recovery site, documents, print) ------------- */
+:root{
+  --bg:#fafdfe;            --surface:#f2f9fb;       --surface-2:#e4f2f6;
+  --border-subtle:#c2d3d8; --border-strong:#7a8c92;
+  --muted:#4e727d;         --text-2:#2b5561;        --ink:#00212a;
+  --accent:#cb6700;        --accent-hover:#d57018;  --on-accent:#1a1a17;
+  --accent-text:#9b5d32;   --teal-text:#00768e;     --focus:#cd712b;
+  --danger-text:#a9524d;   --danger-solid:#c5514c;  --danger-surface:#ffebe9;
+  --on-danger:#ffffff;     --success-text:#49774b;
+
+  --font-display:'Frank Ruhl Libre','Times New Roman',serif;
+  --font-ui:'Heebo','Segoe UI',system-ui,sans-serif;
+
+  --sp-1:4px;  --sp-2:8px;  --sp-3:12px; --sp-4:16px; --sp-5:24px;
+  --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px; --sp-10:128px;
+  --radius-sm:6px; --radius:10px; --radius-lg:16px;
+  --measure:38em; --measure-lead:34em;
+}
+
+/* --- tokens: DARK register (production page, video) ----------------------- */
+:root[data-theme="dark"]{
+  --bg:#001319;            --surface:#001e25;       --surface-2:#002933;
+  --border-subtle:#003f4d; --border-strong:#007a92;
+  --muted:#6c929d;         --text-2:#8ab7c4;        --ink:#dff1f7;
+  --accent:#cb6700;        --accent-hover:#d57018;  --on-accent:#1a1a17;
+  --accent-text:#bd7d51;   --teal-text:#0099b6;     --focus:#af5700;
+  --danger-text:#cd726c;   --danger-solid:#c5514c;  --danger-surface:#351d1b;
+  --on-danger:#ffffff;     --success-text:#689769;
+}
+/* Only for a page that should genuinely follow the viewer. Each of Avihai's
+   sites pins its register with data-theme instead. */
+@media (prefers-color-scheme:dark){
+  :root[data-theme="auto"]{
+    --bg:#001319;            --surface:#001e25;       --surface-2:#002933;
+    --border-subtle:#003f4d; --border-strong:#007a92;
+    --muted:#6c929d;         --text-2:#8ab7c4;        --ink:#dff1f7;
+    --accent:#cb6700;        --accent-hover:#d57018;  --on-accent:#1a1a17;
+    --accent-text:#bd7d51;   --teal-text:#0099b6;     --focus:#af5700;
+    --danger-text:#cd726c;   --danger-solid:#c5514c;  --danger-surface:#351d1b;
+    --on-danger:#ffffff;     --success-text:#689769;
+  }
+}
+
+/* --- base ---------------------------------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-ui);font-size:17px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%;display:block}
+
+/* --- type scale ----------------------------------------------------------
+   Headings step by 1.333, text by 1.125. Hebrew has no ascenders or
+   descenders to separate lines optically, so the line-heights are floors.   */
+.display,h1.display{font-family:var(--font-display);font-weight:700;font-size:50px;
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 var(--sp-4)}
+h1{font-family:var(--font-display);font-weight:700;font-size:37px;line-height:1.18;
+  letter-spacing:-.01em;margin:0 0 var(--sp-4)}
+h2{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.28;
+  margin:0 0 var(--sp-3)}
+h3{font-family:var(--font-ui);font-weight:700;font-size:21px;line-height:1.40;
+  margin:0 0 var(--sp-2)}
+.lead{font-size:19px;line-height:1.65;color:var(--text-2);max-width:var(--measure-lead)}
+p{margin:0 0 var(--sp-4);max-width:var(--measure)}
+.small{font-size:15px;line-height:1.70}
+.caption{font-size:13.5px;line-height:1.60;color:var(--muted)}
+.micro{font-size:12px;line-height:1.50;letter-spacing:.04em;color:var(--muted)}
+@media (max-width:600px){
+  .display,h1.display{font-size:32px}
+  h1{font-size:27px} h2{font-size:23px} h3{font-size:19px}
+  .lead{font-size:18px} .caption{font-size:13px}
+}
+
+/* --- links and focus ----------------------------------------------------- */
+a{color:var(--teal-text);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--accent-text)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* --- buttons -------------------------------------------------------------
+   The accent carries DARK text. Hover goes LIGHTER — darkening it drops the
+   text to 3.79:1. Never invert this.                                        */
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);
+  font-family:var(--font-ui);font-weight:700;font-size:17px;
+  padding:var(--sp-3) var(--sp-5);border:0;border-radius:var(--radius);
+  cursor:pointer;text-decoration:none;transition:background .15s ease}
+.btn:hover{background:var(--accent-hover);color:var(--on-accent)}
+.btn-ghost{background:transparent;color:var(--ink);
+  border:1px solid var(--border-strong)}
+.btn-ghost:hover{background:var(--surface-2);color:var(--ink)}
+
+/* --- surfaces ------------------------------------------------------------ */
+.card{background:var(--surface);border:1px solid var(--border-subtle);
+  border-radius:var(--radius);padding:var(--sp-5)}
+.card-feature{padding:var(--sp-6)}
+hr{border:0;border-top:1px solid var(--border-subtle);margin:var(--sp-6) 0}
+
+/* --- form controls -------------------------------------------------------
+   border-strong is the ONLY correct border on a control. border-subtle is
+   decorative and sits near 1.5:1 — using it here is the one way to break
+   accessibility with this palette.                                          */
+label{display:block;font-weight:600;font-size:15px;margin-bottom:var(--sp-1)}
+input,textarea,select{
+  width:100%;font:inherit;font-size:17px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:var(--sp-3);
+}
+input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:3px solid var(--focus);outline-offset:1px}
+
+/* --- notices ------------------------------------------------------------- */
+.note{background:var(--surface-2);border-inline-start:4px solid var(--accent);
+  border-radius:var(--radius-sm);padding:var(--sp-3) var(--sp-4)}
+.note-danger{background:var(--danger-surface);border-inline-start-color:var(--danger-solid)}
+.note-danger strong{color:var(--danger-text)}
+
+/* --- the accent rule from the lockup, reusable as a divider -------------- */
+.rule{height:4px;width:64px;background:var(--accent);border-radius:2px;border:0;margin:var(--sp-4) 0}
+
+/* --- layout -------------------------------------------------------------- */
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--sp-5)}
+.section{padding:var(--sp-8) 0}
+@media (max-width:600px){.section{padding:var(--sp-7) 0}}
+.stack{display:flex;flex-direction:column;gap:var(--sp-4)}
+.row{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center}
+.grid{display:grid;gap:var(--sp-4);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+/* --- the logo in a header ------------------------------------------------ */
+.logo{height:34px;width:auto}
+.logo-stacked{height:96px;width:auto}
+
+/* --- skip link ----------------------------------------------------------- */
+.skip{position:absolute;inset-inline-start:-9999px}
+.skip:focus{inset-inline-start:var(--sp-3);top:var(--sp-3);z-index:99;
+  background:var(--accent);color:var(--on-accent);padding:var(--sp-2) var(--sp-4);
+  border-radius:var(--radius-sm)}
