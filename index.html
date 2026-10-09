@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>אביחי תרם · הפקות וידאו</title>
-<meta name="description" content="הפקות וידאו למרצים, ליוצרי קורסים ולבעלי עסקים. קורסים דיגיטליים, תיעוד הרצאות, עדויות לקוחות ותוכן לרשתות, מהתכנון ועד הקבצים המוכנים להעלאה.">
+<meta name="description" content="הפקות וידאו לבעלי עסקים: סרטונים שבונים מותג שסומכים עליו ורוצים לקנות דווקא ממנו.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://avihaiteram.co.il/">
 <meta property="og:title" content="אביחי תרם · הפקות וידאו">
-<meta property="og:description" content="הפקות וידאו למרצים, ליוצרי קורסים ולבעלי עסקים. מהתכנון ועד הקבצים המוכנים להעלאה.">
+<meta property="og:description" content="הפקות וידאו לבעלי עסקים: סרטונים שבונים מותג שסומכים עליו ורוצים לקנות דווקא ממנו.">
 <meta property="og:url" content="https://avihaiteram.co.il/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://avihaiteram.co.il/media/work-interview.jpg">
@@ -35,6 +35,9 @@
   .names{font-size:21px;line-height:2;max-width:var(--measure)}
   .me{display:grid;grid-template-columns:220px 1fr;gap:var(--sp-6);align-items:start}
   .me img{width:100%;border-radius:var(--radius)}
+  .herophoto{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block}
+  .pull{font-family:var(--font-display);font-weight:700;font-size:clamp(22px,2.6vw,30px);line-height:1.5;
+    margin:0 0 var(--sp-7);max-width:var(--measure);color:var(--ink)}
   @media (max-width:820px){
     .hero{grid-template-columns:1fr;gap:var(--sp-6)}
     .me{grid-template-columns:1fr;gap:var(--sp-5)}
@@ -305,16 +308,12 @@
 <div class="wrap">
   <div class="hero">
     <div>
-      <h1 class="display">אתם יודעים את החומר. אני דואג שהוא ייראה ויישמע כמו שצריך.</h1>
-      <p class="lead">אני מפיק וידאו למרצים, ליוצרי קורסים ולבעלי עסקים. קורס דיגיטלי, תיעוד הרצאה, עדות לקוח או סרטון שיווקי, מהתכנון ועד הקבצים המוכנים להעלאה.</p>
+      <h1 class="display">סרטונים שבונים מותג שסומכים עליו ורוצים לקנות דווקא ממנו.</h1>
+      <p class="lead">אני מפיק לבעלי עסקים וידאו שנראה ונשמע מקצועי ומעביר את המסר הנכון, מהתכנון ועד הקבצים המוכנים להעלאה.</p>
       <p><a class="btn" href="#contact">השאירו פרטים ואחזור אליכם</a>
          <a class="btn-ghost btn" href="#work">לצפייה בעבודות</a></p>
     </div>
-    <figure class="vid wide"><div class="vidwrap">
-      <video controls preload="none" playsinline poster="media/work-interview.jpg">
-        <source src="media/work-interview.mp4" type="video/mp4">
-      </video><div class="play"><span></span></div></div>
-    </figure>
+    <figure class="vid"><img class="herophoto" src="media/studio-day.jpg" width="900" height="675" alt="יום צילום: מצלמות, תאורה ומרצה מול הלוח"></figure>
   </div>
 </div>
 </section>
@@ -396,6 +395,7 @@
 <section class="section">
 <div class="wrap">
   <h2>מה אומרים לקוחות שעבדו איתי</h2>
+  <blockquote class="pull">“אני אשלם יותר בשביל לדעת שאני לא אקח את הסיכון.”</blockquote>
   <div class="works">
     <figure class="vid proof"><div class="vidwrap">
       <video controls preload="none" playsinline poster="media/testimonial-livnat.jpg"><source src="media/testimonial-livnat.mp4" type="video/mp4"></video><div class="play"><span></span></div></div>
@@ -422,7 +422,8 @@
   <h2>מי אני</h2>
   <div class="me">
     <img src="media/avihai.jpg" alt="אביחי תרם מאחורי המצלמה">
-    <p>אני אביחי תרם, מפיק וידאו. אני לוקח אחריות על כל שלב בדרך: הצילום, העריכה, הגרפיקה, הצבע והסאונד. אני מתכנן את הצילום איתכם מראש, מגיע עם כל מה שצריך, מעדכן אתכם לאורך העבודה ומוסר את הסרטונים בתאריך שסיכמנו.</p>
+    <div><p>אני אביחי תרם, מפיק וידאו. אני לוקח אחריות על כל שלב בדרך: הצילום, העריכה, הגרפיקה, הצבע והסאונד. אני מתכנן את הצילום איתכם מראש, מגיע עם כל מה שצריך, מעדכן אתכם לאורך העבודה ומוסר את הסרטונים בתאריך שסיכמנו.</p>
+    <p>מעבר לצילום ולעריכה, אני מבין גם בתוכן ובשיווק, ולכן אני בונה כל סרטון סביב המסר שהוא צריך להעביר.</p></div>
   </div>
 </div>
 </section>
